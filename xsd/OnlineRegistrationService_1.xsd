@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @generated @ 20.08.2012 13:53:05 by service_generator (v6.1.1 from 2012-01-18 10:49:29) -->
+<xsd:schema xmlns:ebcre="http://www.css.ch/eb_onlineregistrationservice/1"
+   xmlns:tns="http://www.css.ch/eb_onlineregistrationservice/OnlineRegistrationService/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified" targetNamespace="http://www.css.ch/eb_onlineregistrationservice/OnlineRegistrationService/1"
+   version="1.0">
+   <xsd:import namespace="http://www.css.ch/eb_onlineregistrationservice/1"
+      schemaLocation="ch_css_eb_onlineregistrationservice_1.xsd" />
+   <xsd:element name="executeOnlineRegistrationService" type="tns:executeOnlineRegistrationService" />
+   <xsd:element name="executeOnlineRegistrationServiceResponse" type="tns:executeOnlineRegistrationServiceResponse" />
+   <xsd:element name="OnlineRegistrationServiceFault" type="ebcre:OnlineRegistrationServiceException" />
+   <xsd:complexType name="executeOnlineRegistrationService">
+      <xsd:sequence>
+         <xsd:element name="ExecuteOnlineRegistrationService" type="ebcre:ExecuteOnlineRegistrationServiceIn" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="executeOnlineRegistrationServiceResponse">
+      <xsd:sequence>
+         <xsd:element name="returnValue" type="ebcre:ExecuteOnlineRegistrationServiceOut" />
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

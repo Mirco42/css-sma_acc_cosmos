@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:ns8="http://www.w3.org/2005/08/addressing" targetNamespace="http://www.css.ch/code/ebiz/8" version="8" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="PexAssignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DV">
+                            <ns5:javadoc>DV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="D_NET">
+                            <ns5:javadoc>D-Net&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STATISCH">
+                            <ns5:javadoc>Statisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Portal">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EOSCSS">
+                            <ns5:javadoc>EOSCSS&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EOSSANAGATE">
+                            <ns5:javadoc>EOSSanagate&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KEYACCOUNTCSS">
+                            <ns5:javadoc>KeyAccountCSS&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MYCSS">
+                            <ns5:javadoc>MyCSS&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MYSANAGATE">
+                            <ns5:javadoc>MySanagate&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PraemienrechnerStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="OFFERTE_ERSTELLT">
+                            <ns5:javadoc>Offerte erstellt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ONLINE_ABGESCHLOSSEN">
+                            <ns5:javadoc>Online abgeschlossen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="POSTVERSAND_BEANTRAGT">
+                            <ns5:javadoc>Postversand beantragt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZWISCHENSTAND_GESPEICHERT">
+                            <ns5:javadoc>Zwischenstand gespeichert&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VerkaufsphaseEOS">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="06">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ABGESCHLOSSEN_ERFOLG">
+                            <ns5:javadoc>abgeschlossen (Erfolg)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="07">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ABGESCHLOSSEN_MISSERFOLG">
+                            <ns5:javadoc>abgeschlossen (Misserfolg)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="IN_OFFERTSTELLUNG">
+                            <ns5:javadoc>in Offertstellung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

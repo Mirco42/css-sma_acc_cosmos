@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" targetNamespace="http://www.css.ch/eb/es/renderer/PdfRenderer/8" version="8" elementFormDefault="qualified">
+    <xs:import namespace="http://www.css.ch/eb/es/renderer/8" schemaLocation="ch_css_eb_es_renderer_8.xsd"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="InvalidDataException" name="InvalidDataFault"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ServiceUnavailableException" name="ServiceUnavailableFault"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="getVersion" name="getVersion"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="getVersionResponse" name="getVersionResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="ping" name="ping"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="pingResponse" name="pingResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAerzteliste" name="submitDruckauftragAerzteliste"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAerztelisteResponse" name="submitDruckauftragAerztelisteResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAktivierungscode" name="submitDruckauftragAktivierungscode"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAktivierungscodeResponse" name="submitDruckauftragAktivierungscodeResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAntrag" name="submitDruckauftragAntrag"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragAntragResponse" name="submitDruckauftragAntragResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragFRVReisedokumentation" name="submitDruckauftragFRVReisedokumentation"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragFRVReisedokumentationResponse" name="submitDruckauftragFRVReisedokumentationResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragOfferte" name="submitDruckauftragOfferte"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragOfferteResponse" name="submitDruckauftragOfferteResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragSHVAntrag" name="submitDruckauftragSHVAntrag"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragSHVAntragResponse" name="submitDruckauftragSHVAntragResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragWechselFranchise" name="submitDruckauftragWechselFranchise"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragWechselFranchiseResponse" name="submitDruckauftragWechselFranchiseResponse"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragWechselVersicherungsmodell" name="submitDruckauftragWechselVersicherungsmodell"/>
+    <xs:element xmlns="http://www.css.ch/eb/es/renderer/PdfRenderer/8" type="submitDruckauftragWechselVersicherungsmodellResponse" name="submitDruckauftragWechselVersicherungsmodellResponse"/>
+    <xs:complexType name="getVersion">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getVersionResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="GetVersionOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ping">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="pingResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PingOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAerzteliste">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAerztelisteIn" name="druckauftragIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAerztelisteResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAerztelisteOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAktivierungscode">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAktivierungsCodeIn" name="druckauftragAktivierungsCodeIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAktivierungscodeResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAktivierungsCodeOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAntrag">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAntragIn" name="druckauftragIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragAntragResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragAntragOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragFRVReisedokumentation">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragFRVReisedokumentationIn" name="druckauftragIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragFRVReisedokumentationResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragFRVReisedokumentationOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragOfferte">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragOfferteIn" name="druckauftragIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragOfferteResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragOfferteOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragSHVAntrag">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragSHVAntragIn" name="druckauftragIn"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragSHVAntragResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragSHVAntragOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragWechselFranchise">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragWechselFranchiseIn" name="in"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragWechselFranchiseResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragWechselFranchiseOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragWechselVersicherungsmodell">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragWechselVersicherungsmodellIn" name="in"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitDruckauftragWechselVersicherungsmodellResponse">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DruckauftragWechselVersicherungsmodellOut" name="returnValue"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns1:definitions xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://www.w3.org/2005/08/addressing" xmlns:ns8="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="PdfRenderer">
+   <ns1:types>
+      <xs:schema targetNamespace="http://www.css.ch/eb/es/renderer/PdfRenderer/9" version="9" elementFormDefault="qualified">
+         <xs:include schemaLocation="../xsd/PdfRenderer_9.xsd"/>
+      </xs:schema>
+   </ns1:types>
+   <ns1:portType name="PdfRenderer">
+      <ns1:operation name="getVersion">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererGetVersionRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererGetVersionResponse"/>
+      </ns1:operation>
+      <ns1:operation name="ping">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererPingRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererPingResponse"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragAktivierungscode">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragAktivierungscodeRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragAktivierungscodeResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragAntrag">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragAntragRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragAntragResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragFRVReisedokumentation">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragFRVReisedokumentationRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragFRVReisedokumentationResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragOfferte">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragOfferteRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragOfferteResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragSHVAntrag">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragSHVAntragRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragSHVAntragResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragWechselFranchise">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragWechselFranchiseRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragWechselFranchiseResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+      <ns1:operation name="submitDruckauftragWechselVersicherungsmodell">
+         <ns1:input xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragWechselVersicherungsmodellRequest"/>
+         <ns1:output xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" message="tns:PdfRendererSubmitDruckauftragWechselVersicherungsmodellResponse"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="InvalidDataFault" message="tns:InvalidDataFault"/>
+         <ns1:fault xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="ServiceUnavailableFault" message="tns:ServiceUnavailableFault"/>
+      </ns1:operation>
+   </ns1:portType>
+   <ns1:message name="PdfRendererGetVersionRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:getVersion"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererGetVersionResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:getVersionResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererPingRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:ping"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererPingResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:pingResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragAktivierungscodeRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragAktivierungscode"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragAktivierungscodeResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragAktivierungscodeResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragAntragRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragAntrag"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragAntragResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragAntragResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragFRVReisedokumentationRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragFRVReisedokumentation"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragFRVReisedokumentationResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragFRVReisedokumentationResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragOfferteRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragOfferte"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragOfferteResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragOfferteResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragSHVAntragRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragSHVAntrag"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragSHVAntragResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragSHVAntragResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragWechselFranchiseRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragWechselFranchise"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragWechselFranchiseResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragWechselFranchiseResponse"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragWechselVersicherungsmodellRequest">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragWechselVersicherungsmodell"/>
+   </ns1:message>
+   <ns1:message name="PdfRendererSubmitDruckauftragWechselVersicherungsmodellResponse">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="parameters" element="tns:submitDruckauftragWechselVersicherungsmodellResponse"/>
+   </ns1:message>
+   <ns1:message name="InvalidDataFault">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="fault" element="tns:InvalidDataFault"/>
+   </ns1:message>
+   <ns1:message name="ServiceUnavailableFault">
+      <ns1:part xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="fault" element="tns:ServiceUnavailableFault"/>
+   </ns1:message>
+</ns1:definitions>

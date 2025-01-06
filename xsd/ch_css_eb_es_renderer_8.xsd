@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" targetNamespace="http://www.css.ch/eb/es/renderer/8" version="8" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:import namespace="http://www.css.ch/bsfw/types/1" schemaLocation="ch_css_bsfw_types_1.xsd"/>
+    <xs:import namespace="http://www.css.ch/code/ebiz/7" schemaLocation="ch_css_code_ebiz_7.xsd"/>
+    <xs:import namespace="http://www.css.ch/code/fibu/14" schemaLocation="ch_css_code_fibu_14.xsd"/>
+    <xs:import namespace="http://www.css.ch/code/partner/68" schemaLocation="ch_css_code_partner_68.xsd"/>
+    <xs:import namespace="http://www.css.ch/code/produkt/45" schemaLocation="ch_css_code_produkt_45.xsd"/>
+    <xs:complexType name="Abrechnung" abstract="true">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Dokument">
+                <xs:sequence>
+                    <xs:element type="xs:date" name="faellig" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="rechnungsNr" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:decimal" name="betrag" minOccurs="1" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/fibu/14" type="ns7:Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/produkt/45" type="ns7:Sparte" name="sparte" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="druckDokumentNummer" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AbrechnungSearchParam" abstract="true">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="DokumentSearchParam">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="rechnungsNr" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="faelligVon" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="faelligBis" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:decimal" name="betragVon" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:decimal" name="betragBis" minOccurs="0" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/fibu/14" type="ns7:Anbieter" name="anbieter" minOccurs="0" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/produkt/45" type="ns7:Sparte" name="sparte" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Absender">
+        <xs:sequence>
+            <xs:element type="xs:string" name="anbieter1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="anbieter2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="faxnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="url" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AntwortArzt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AntwortDetail">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="imAusland" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="zehnJahreNichtBesucht" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="verstorben" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AntwortAuswahl">
+        <xs:sequence>
+            <xs:element type="xs:string" name="antwort" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="ausgewaehlt" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AntwortDetail">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="AntwortDetailSchluesselWert">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AntwortDetail">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="schluessel" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="wert" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AntwortDetailZeile">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AntwortDetail">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="diagnose" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="behandlungVonBis" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="behandlungArt" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="ausgeheilt" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AntwortVonBis">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AntwortDetail">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="von" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="bis" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Arzt">
+        <xs:sequence>
+            <xs:element type="xs:string" name="vorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kanton" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Kantonsnummer" name="kantonsnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Patientenaufnahme" name="patientenaufnahme" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="zsrnr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="santenr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="arztTyp" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerArt" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerArtBeschreibung" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="netzwerk" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gruppenpraxis" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="arztwahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ArztQuelle" name="quelle" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Auswertung">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Dokument">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="vertragNr" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="dateiname" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="titel" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="auswertungszeitraumVon" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="auswertungszeitraumBis" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="dokumentNummer" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AuswertungSearchParam">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="DokumentSearchParam">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="BasisElementarProdukt">
+        <xs:sequence>
+            <xs:element type="xs:string" name="bezeichnung" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="betrag" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BasisPerson">
+        <xs:sequence>
+            <xs:element type="xs:string" name="anrede" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="geschlecht" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerNrFmt" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="geburtsdatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasseMitStrassenNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="vorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="nationalitaet" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bewilligungsKategorie" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Produkte" name="produkte" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BasisProdukt">
+        <xs:sequence>
+            <xs:element type="xs:string" name="grundVersicherungSumme" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kanton" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="vetragsGrundlagen" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bruttoPraemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="versicherungsSumme" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bezeichnung" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="betrag" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gebaeudeStrasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gebaeudeStrassenNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gebaeudePlz" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gebaeudeOrt" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Rabatt" name="jugendRabatt" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Rabatt" name="kundenRabatt" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Rabatt" name="vertragsdauerRabatt" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ZusatzVersicherung" name="zusatzVersicherung" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="GrundVersicherung" name="grundVersicherung" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="BasisProdukt" name="basisProdukt" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Rabatt" name="stempelgebuehrRabatt" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Dokument" abstract="true">
+        <xs:sequence>
+            <xs:element type="xs:date" name="erstellt" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="dateiTyp" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DokumentSearchParam">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Download">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Dokument">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="dateiname" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="titel" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="beschreibung" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="dokumentNummer" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DownloadSearchParam">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="DokumentSearchParam">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAerztelisteIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Arzt" name="arzt" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DoctorsListType" name="listType" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="isKube" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAerztelisteOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAktivierungsCodeIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNrEmpfaenger" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/ebiz/7" type="Portal" name="portal" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="sprache" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="aktivierungsCode" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="RegistrationsTyp" name="registrationType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAktivierungsCodeOut">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAntragIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="AntragTyp" name="antragTyp" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="inklBegleitBrief" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="inklPexBrief" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Person" name="person" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Absender" name="absender" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PexPartner" name="pexpartner" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="AntragsQuelle" name="quelle" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="antragId" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Ersteller" name="ersteller" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="preview" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="lsvFormulare" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragAntragOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragFRVReisedokumentationIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="VersichertePersonFRV" name="versichertePerson" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVDetail" name="frvDetail" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="VersichertePersonFRV" name="versichertePerson2" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemie" name="paketStandard" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemie" name="paketMidi" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemie" name="paketMiniNku" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemie" name="paketMiniPa" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemieOption" name="paketGepaeck" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemie" name="paketUti" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FRVPraemieOption" name="paketAnnulierungskosten" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragFRVReisedokumentationOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragOfferteIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="druckdokumentNr" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Person" name="person" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Absender" name="absender" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="offertenId" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PexPartner" name="pexpartner" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="totalKvg" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="totalVvg" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="totalAllePersonen" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragOfferteOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragSHVAntragIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="antragId" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="SHVAbsender" name="absender" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="BasisPerson" name="person" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragSHVAntragOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragWechselFranchiseIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bemerkung" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FranchisePraemie" name="franchisepraemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="VersichertePerson" name="versicherteperson" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragWechselFranchiseOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragWechselVersicherungsmodellIn">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="language" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="neuesModell" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="wechselNeujahr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="wechselAnfangMonat" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:date" name="wechselDatum" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="arztPraxis" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bemerkung" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="VersichertePerson" name="versicherteperson" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FranchisePraemie" name="franchisepraemie" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DruckauftragWechselVersicherungsmodellOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="pdfContent" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadAdresseMitBeschaeftigungsverhaeltnisIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadAdresseMitBeschaeftigungsverhaeltnisOut">
+        <xs:sequence>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="nummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="organisationseinheit" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="plz" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefax" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefon" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:int" name="postfachNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="postfach" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadDokumentIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="druckdokumentNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="dokumentNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerNrUnternehmen" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadDokumentOut">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="KeyAccountsUnternehmen" name="keyAccountsUnternehmen" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:hexBinary" name="content" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="dateiName" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadDokumentPrivatIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="onlineAntragNr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="druckdokumentNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadDokumentPrivatOut">
+        <xs:sequence>
+            <xs:element type="xs:hexBinary" name="content" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="dateiName" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadVerwalteteUnternehmenIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQueryReadVerwalteteUnternehmenOut">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Unternehmen" name="unternehmen" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQuerySearchDokumenteIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNrUnternehmen" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PagingParams" name="pagingParams" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="DokumentSearchParam" name="dokumentSearchParam" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EBCommonQuerySearchDokumenteOut">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PagingInfo" name="pagingInfo" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="KeyAccountsUnternehmen" name="keyAccountsUnternehmen" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Dokument" name="dokumente" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ElementarProdukt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="BasisElementarProdukt">
+                <xs:sequence>
+                    <xs:element type="xs:boolean" name="istVersichert" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="zusatzInfo" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Ersteller">
+        <xs:sequence>
+            <xs:element type="xs:string" name="textSchluessel" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="zusatzWert" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ErweiterungPerson">
+        <xs:sequence>
+            <xs:element type="xs:string" name="oaNummer" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FRVDetail">
+        <xs:sequence>
+            <xs:element type="xs:string" name="policenNummer" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="deckung" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="dauer" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:date" name="startdatum" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:float" name="gesamtpraemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="isShortTerm" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="isPaymentOrder" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FRVPraemie">
+        <xs:sequence>
+            <xs:element type="xs:float" name="nettopraemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:float" name="rabatt" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:float" name="stempelsteuer" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FRVPraemieOption">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="FRVPraemie">
+                <xs:sequence>
+                    <xs:element type="xs:int" name="option" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="FranchisePraemie">
+        <xs:sequence>
+            <xs:element type="xs:int" name="franchise" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="krankheitUnfall" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="krankheit" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:double" name="praemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:int" name="praemienjahr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FranchiseVariante">
+        <xs:sequence>
+            <xs:element type="xs:string" name="totalTarif" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kvgTarif" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="franchise" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GebaeudeProdukt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="BasisProdukt">
+                <xs:sequence>
+                    <xs:element type="xs:boolean" name="flachdachVorhanden" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="bodenheizungVorhanden" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:boolean" name="hydrantVorhanden" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="haustyp" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="bauart" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Gesundheitsfrage">
+        <xs:sequence>
+            <xs:element type="xs:string" name="fragenId" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="AntwortDetail" name="antwortdetail" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="AntwortAuswahl" name="antwortAuswahl" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetVersionOut">
+        <xs:sequence>
+            <xs:element type="xs:string" name="message" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GrundVersicherung">
+        <xs:sequence>
+            <xs:element type="xs:string" name="selbstbehalt" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="feuer" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="elementar" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="wasser" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="diebstahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="privathaftplichtEinzel" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HausratProdukt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="BasisProdukt">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="berechnungsBasis" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="anzahlPersonen" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="anzahlZimmer" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="einrichtungsStandard" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="wohnflaeche" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="haustyp" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="KeyAccount">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KeyAccountsUnternehmen">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNrUnternehmen" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="KeyAccount" name="keyAccounts" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kontakt">
+        <xs:sequence>
+            <xs:element type="xs:string" name="personNr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="vorname" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Leistungsabrechnung">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Abrechnung">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="LeistungsabrechnungSearchParam">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AbrechnungSearchParam">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PagingInfo">
+        <xs:sequence>
+            <xs:element type="xs:int" name="size" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PagingParams">
+        <xs:sequence>
+            <xs:element type="xs:int" name="from" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:int" name="pageSize" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/code/fibu/14" type="Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="druckdokumentNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="anrede" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="vorname" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postfach" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz3" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="Language" name="sprache" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/code/partner/68" type="CSSSex" name="geschlecht" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="geburtsDatum" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="havArztName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonGeschaeft" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonMobil" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="zivilstand" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="beruf" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="austrittsgrund" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="austrittsDatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="eintrittsgrund" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="eintrittsdatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kundennummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Zone" name="zone" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="nationalitaet" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:int" name="aufenthaltsbewilligung" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="eingereistAm" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Vorversicherer" name="vorversicherer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentAnrede" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentStrasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentPostfach" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentAdresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentAdresszusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentPostleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="korrespondentOrt" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerTelefonnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerEmail" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="praemienzahlerIstLsv" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerBankadresse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="praemienzahlerIstEsr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerZahlungsfrequenz" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerBankkonto" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienzahlerIban" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerBankadresse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="leistungsempfaengerIstBankkonto" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerIban" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="leistungsempfaengerIstZA" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerZAName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerZAVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerZAAdresse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerZAPostleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="leistungsempfaengerZAOrt" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Produkt" name="produkt" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Gesundheitsfrage" name="gesundheitsfragen" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="FranchiseVariante" name="franchisevariante" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element type="xs:string" name="gdTyp" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="PraemienTotal" name="praemienTotal" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="bpDrucken" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="bpTagesdatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterPnr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterFunktionsbezeichnung" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterTelefonnr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterFaxnr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpVerkaufsberaterEmail" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeKundennummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeVorname" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="bpKundeGeburtsdatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeTelefonnrPrivat" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeTelefonnrGeschaeft" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bpKundeEmail" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="erRechnungPerErechnung" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="erEbillAccountId" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Rahmenvertrag" name="rahmenvertrag" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ErweiterungPerson" name="erweiterung" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PexPartner">
+        <xs:sequence>
+            <xs:element type="xs:boolean" name="isStaticPexAgency" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="pexPartnerName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="anrede" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="freitext" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gruss" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="rahmenvertrag" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:int" name="maximalerRabatt" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturUnternehmen" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturAdresse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturPlz" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturOrt" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturTelefon" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturFax" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturEmail" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="statischePexAgenturWebsite" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PingBackendServicesOut">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Service" name="services" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PingOut">
+        <xs:sequence>
+            <xs:element type="xs:string" name="message" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Police">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Dokument">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="policeNr" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:int" name="policenVersion" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="beginn" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="ende" minOccurs="1" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/fibu/14" type="ns7:Anbieter" name="anbieter" minOccurs="1" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/produkt/45" type="ns7:Sparte" name="sparte" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="druckDokumentNummer" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PoliceSearchParam">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="DokumentSearchParam">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="policenNr" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="beginPolice" minOccurs="0" maxOccurs="1"/>
+                    <xs:element type="xs:date" name="endePolice" minOccurs="0" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/fibu/14" type="ns7:Anbieter" name="anbieter" minOccurs="0" maxOccurs="1"/>
+                    <xs:element xmlns:ns7="http://www.css.ch/code/produkt/45" type="ns7:Sparte" name="sparte" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PraemienTotal">
+        <xs:sequence>
+            <xs:element type="xs:string" name="personTotal" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="uebertrag" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Praemienabrechnung">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="Abrechnung">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PraemienabrechnungSearchParam">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="AbrechnungSearchParam">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PrivathaftpflichtProdukt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="BasisProdukt">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="personenKreis" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="besitzStand" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Produkt">
+        <xs:sequence>
+            <xs:element type="xs:string" name="produktId" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bezeichnung" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="inklUnfall" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="istKvg" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:date" name="tarifGenehmigtBis" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ProduktAttribut" name="produkt" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProduktAttribut">
+        <xs:sequence>
+            <xs:element type="xs:string" name="schluessel" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="wert" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Produkte">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="BasisProdukt" name="basisProdukt" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element type="xs:boolean" name="isBroker" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:date" name="versicherungsende" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="hauptfaelligkeit" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="praemienfaelligkeit" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:date" name="versicherungsbeginn" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="stempelgebuehr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="rechnungspraemie" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="vorversichererName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:date" name="vorversichererAblaufdatum" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="isVorversichert" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Rabatt">
+        <xs:complexContent>
+            <xs:extension xmlns="http://www.css.ch/eb/es/renderer/8" base="BasisElementarProdukt">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="prozent" minOccurs="1" maxOccurs="1"/>
+                    <xs:element type="xs:string" name="summe" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Rahmenvertrag">
+        <xs:sequence>
+            <xs:element type="xs:string" name="ravName" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ravUnternehmen" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SHVAbsender">
+        <xs:sequence>
+            <xs:element type="xs:string" name="orgeinheit" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="agenturNr" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasseMitNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:boolean" name="postfach" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postfachNr" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="plz" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="faxnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SearchOrgEinheitsNrFuerMitarbeiterPartnerNrIn">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SearchOrgEinheitsNrFuerMitarbeiterPartnerNrOut">
+        <xs:sequence>
+            <xs:element type="xs:string" name="orgEinheitsNrDerPrimaerenStelle" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Service">
+        <xs:sequence>
+            <xs:element type="xs:string" name="service" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="fehler" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="message" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Unternehmen">
+        <xs:sequence>
+            <xs:element type="xs:string" name="partnerNrUnternehmen" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="strasse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="hausnummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adressZusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adressZusatz2" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adressZusatz3" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="plzAusland" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ortAusland" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="mobileNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="faxNummer" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="webseite" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Kontakt" name="cssKontakt" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VersichertePerson">
+        <xs:sequence>
+            <xs:element type="xs:string" name="vorname" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresse" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:int" name="plz" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="telefonnummer" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kundennummer" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VersichertePersonFRV">
+        <xs:sequence>
+            <xs:element type="xs:string" name="vorname" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresse" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:int" name="plz" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Vorversicherer">
+        <xs:sequence>
+            <xs:element type="xs:int" name="bagId" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="name" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz1" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="adresszusatz2" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Zone">
+        <xs:sequence>
+            <xs:element type="xs:string" name="postleitzahl" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="kanton" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="ort" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="gemeinde" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:int" name="zonenNr" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ZusatzVersicherung">
+        <xs:sequence>
+            <xs:element type="xs:string" name="selbstbehalt" minOccurs="1" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="fremderPersonenwagen" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="fremdePferde" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="glasbruchSchaeden" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="einfacherDiebstahlAuswaerts" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="freilegungsKosten" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="entsorgungsKosten" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="einbruchDiebstahl" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="mietzinsausfallWasser" minOccurs="0" maxOccurs="1"/>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="ElementarProdukt" name="mietzinsausfallFeuer" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BackendServicesNotAvailableException">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/eb/es/renderer/8" type="Service" name="failedServices" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DokumentNotYetAvailableException">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="EBInvalidPartnerNrException">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="EBNoCompanyAssignedException">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="InvalidDataException">
+        <xs:sequence>
+            <xs:element type="xs:string" name="Message" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ServiceUnavailableException">
+        <xs:sequence>
+            <xs:element type="xs:string" name="service" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="message" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="AntragTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Default">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DEFAULT"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NeuInDerSchweiz">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NEUINDERSCHWEIZ"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="VorgeburtlicheAnmeldung">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VORGEBURTLICHEANMELDUNG"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AntragsQuelle">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="polos">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="POLOS"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="web">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WEB"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="comparis">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="COMPARIS"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="bonus">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BONUS"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20min">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="_20MIN"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="kkvgl">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KKVGL"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pex">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PEX"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="bag">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BAG"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ArztQuelle">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="hav">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAV"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="gpv">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GPV"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DoctorsListType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cssall">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_ALL"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="gpv">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GPV"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="profit">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PROFIT"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="sanagateall">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANAGATE_ALL"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Patientenaufnahme">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="no">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NEIN"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="onRequest">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUF_ANFRAGE"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="yes">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="JA"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RegistrationsTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="Vorregistration"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="Nachregistration"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

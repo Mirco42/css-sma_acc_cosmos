@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:ns8="http://www.w3.org/2005/08/addressing" targetNamespace="http://www.css.ch/code/fibu/14" version="14" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="Anbieter">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ARCOSANA">
+                            <ns5:javadoc>Arcosana&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUXILIA">
+                            <ns5:javadoc>Auxilia&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS">
+                            <ns5:javadoc>CSS&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS">
+                            <ns5:javadoc>Intras&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANAGATE">
+                            <ns5:javadoc>Sanagate&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="99">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZURICH_CONNECT">
+                            <ns5:javadoc>Zurich Connect&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="98">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZURICH_LEBEN">
+                            <ns5:javadoc>Zurich Leben&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ERechnungProvider">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="POST">
+                            <ns5:javadoc>Post&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SIX">
+                            <ns5:javadoc>SIX&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Mandant">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="001">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MANDANT1">
+                            <ns5:javadoc>CSS, A&amp;amp;A, INTRAS&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="002">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MANDANT2">
+                            <ns5:javadoc>SANAGATE&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="000">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MANDANTUEBERGREIFEND">
+                            <ns5:javadoc>mandantenuebergreifend&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

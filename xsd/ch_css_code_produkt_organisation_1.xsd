@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:ns8="http://www.w3.org/2005/08/addressing" targetNamespace="http://www.css.ch/code/produkt/organisation/1" version="1" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="Rechtstraeger">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ARCOSANA_AG">
+                            <ns5:javadoc>Arcosana AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUXILIA_AG">
+                            <ns5:javadoc>Auxilia AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_KRANKENVERSICHERUNG_AG">
+                            <ns5:javadoc>CSS Kranken-Versicherung AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_VERSICHERUNG_AG">
+                            <ns5:javadoc>CSS Versicherung AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS_KRANKENVERSICHERUNG_AG">
+                            <ns5:javadoc>INTRAS Krankenversicherung AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS_VERSICHERUNGEN_AG">
+                            <ns5:javadoc>INTRAS Versicherungen AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANAGATE_AG">
+                            <ns5:javadoc>Sanagate AG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Sparte">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELV">
+                            <ns5:javadoc>ELV-AVIS @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="160">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELV_NEU">
+                            <ns5:javadoc>ELV @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="180">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FREMDPRODUKTE">
+                            <ns5:javadoc>Fremdprodukte</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRV">
+                            <ns5:javadoc>FRV</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="100">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GBT">
+                            <ns5:javadoc>GBT</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KTG">
+                            <ns5:javadoc>KTG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="170">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KU">
+                            <ns5:javadoc>KU</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="210">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KURZFRISTRISIKO_KTG">
+                            <ns5:javadoc>Kurzfristrisiko (KTG)</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KUTG">
+                            <ns5:javadoc>KUTG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KV">
+                            <ns5:javadoc>KV</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="150">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NL">
+                            <ns5:javadoc>NL @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="130">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAV_PG">
+                            <ns5:javadoc>RAV PG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="140">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAV_UG">
+                            <ns5:javadoc>RAV UG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SHV">
+                            <ns5:javadoc>SHV</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="190">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SPV">
+                            <ns5:javadoc>SPV</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STG">
+                            <ns5:javadoc>STG @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="120">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STOP_LOSS">
+                            <ns5:javadoc>STOP LOSS</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="110">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TAG">
+                            <ns5:javadoc>TAG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="80">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UVG">
+                            <ns5:javadoc>UVG</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="90">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UVG_Z">
+                            <ns5:javadoc>UVG-Z</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

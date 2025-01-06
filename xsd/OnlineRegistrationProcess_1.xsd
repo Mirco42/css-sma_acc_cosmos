@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @generated @ 20.08.2012 13:53:05 by service_generator (v6.1.1 from 2012-01-18 10:49:29) -->
+<xsd:schema
+    xmlns:ebcre="http://www.css.ch/eb_onlineregistrationprocess/1" 
+    xmlns:tns="http://www.css.ch/eb_onlineregistrationprocess/OnlineRegistrationProcess/1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.css.ch/eb_onlineregistrationprocess/OnlineRegistrationProcess/1" version="1.0">
+  <xsd:import namespace="http://www.css.ch/eb_onlineregistrationprocess/1" schemaLocation="ch_css_eb_onlineregistrationprocess_1.xsd"/>
+  <xsd:element name="executeOnlineRegistrationProcess" type="tns:executeOnlineRegistrationProcess"/>
+  <xsd:element name="executeOnlineRegistrationProcessResponse" type="tns:executeOnlineRegistrationProcessResponse"/>
+  <xsd:element name="executeRoleSynchronizationProcess" type="tns:executeRoleSynchronizationProcess"/>
+  <xsd:element name="executeRoleSynchronizationProcessResponse" type="tns:executeRoleSynchronizationProcessResponse"/>
+  <xsd:element name="OnlineRegistrationProcessFault" type="ebcre:OnlineRegistrationProcessException"/>
+  <xsd:complexType name="executeOnlineRegistrationProcess">
+    <xsd:sequence>
+      <xsd:element name="ExecuteOnlineRegistrationProcess" type="ebcre:ExecuteOnlineRegistrationProcessIn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="executeOnlineRegistrationProcessResponse">
+    <xsd:sequence>
+      <xsd:element name="returnValue" type="ebcre:ExecuteOnlineRegistrationProcessOut"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="executeRoleSynchronizationProcess">
+    <xsd:sequence>
+      <xsd:element name="ExecuteRoleSynchronizationProcess" type="ebcre:ExecuteRoleSynchronizationProcessIn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="executeRoleSynchronizationProcessResponse">
+    <xsd:sequence>
+      <xsd:element name="returnValue" type="ebcre:ExecuteRoleSynchronizationProcessOut"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

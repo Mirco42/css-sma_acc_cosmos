@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://www.w3.org/2005/08/addressing" xmlns:ns8="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://www.css.ch/code/partner/person/1" version="1" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="Anrede">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRAEULEIN">
+                            <ns5:javadoc>Frau&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRAU">
+                            <ns5:javadoc>Frau&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HERR">
+                            <ns5:javadoc>Herr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Beduerfnissegment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ABWAEGEND">
+                            <ns5:javadoc>Abwägend&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ANSPRUCHSVOLL">
+                            <ns5:javadoc>Anspruchsvoll&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PREISORIENTIERT">
+                            <ns5:javadoc>Preisorientiert&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BewilligungsKategorie">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="A"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="B">
+                            <ns5:javadoc>B: Aufenthaltsbewilligung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="C">
+                            <ns5:javadoc>C: Niederlassungsbewilligung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="F">
+                            <ns5:javadoc>F: vorläufig aufgen. Ausländer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="G">
+                            <ns5:javadoc>G: Grenzgängerbewilligung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="L">
+                            <ns5:javadoc>L: Kurzaufenthaltsbewilligung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="N">
+                            <ns5:javadoc>N: Asylsuchende&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="90">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="S">
+                            <ns5:javadoc>S: Schutzbedürftige&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="80">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANS_PAPIERS">
+                            <ns5:javadoc>Sans Papiers&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BriefanredeVorlage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BF_DR_DER_MEDIZIN">
+                            <ns5:javadoc>BF Dr. der Medizin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BF_NICHT_MED_DR">
+                            <ns5:javadoc>BF nicht med. Dr.&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BF_OHNE_TITEL">
+                            <ns5:javadoc>BF ohne Titel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BF_PROFESSOR">
+                            <ns5:javadoc>BF Professor&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CSSSex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MAENNLICH">
+                            <ns5:javadoc>männlich&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="F">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WEIBLICH">
+                            <ns5:javadoc>weiblich&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Endegrund">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEENDET">
+                            <ns5:javadoc>beendet&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DUBLETTE_BEREINIGT">
+                            <ns5:javadoc>Dublette bereinigt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHLECHTE_DATENQUALITAET">
+                            <ns5:javadoc>schlechte Datenqualität&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERSTORBEN">
+                            <ns5:javadoc>verstorben&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="KundenStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEENDET">
+                            <ns5:javadoc>Beendet&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EHEMALIGER_KUNDE">
+                            <ns5:javadoc>Ehemaliger Kunde&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ERFASST">
+                            <ns5:javadoc>Erfasst&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTERESSENT">
+                            <ns5:javadoc>Interessent&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KUNDE">
+                            <ns5:javadoc>Kunde&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="POTENTIELLER_KUNDE">
+                            <ns5:javadoc>Potentieller Kunde&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNGUELTIG">
+                            <ns5:javadoc>Ungültig&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MitarbeiterTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="90">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AGENTURLEITER">
+                            <ns5:javadoc>Agenturleiter&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="110">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUSSENSTELLE">
+                            <ns5:javadoc>Aussenstelle&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BACKOFFICE_MITARBEITER">
+                            <ns5:javadoc>Backoffice Mitarbeiter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="80">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BUSINESS_SALES_PROMOTOR">
+                            <ns5:javadoc>Business Sales Promotor&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EXTERNER_MITARBEITER">
+                            <ns5:javadoc>externer Mitarbeiter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EXTERNER_VERMITTLER">
+                            <ns5:javadoc>externer Vermittler&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="120">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FIRMENKUNDENLEITER">
+                            <ns5:javadoc>Firmenkundenleiter&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAUPTAGENTURLEITER">
+                            <ns5:javadoc>Generalagent/in&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="130">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KEY_ACCOUNT_MANAGER">
+                            <ns5:javadoc>Key Account Manager&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MARKTGEBIETSLEITER">
+                            <ns5:javadoc>Marktgebietsleiter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="100">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SENIOR_VERKAUFSBERATER_P">
+                            <ns5:javadoc>Senior Verkaufsberater P&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERNEHMENSBERATER_U">
+                            <ns5:javadoc>Unternehmensberater U&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERKAUFSBERATER_P">
+                            <ns5:javadoc>Verkaufsberater P&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PartnerErweiterungstyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ENTSCH_EMPF">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ENTSCH_EMPF">
+                            <ns5:javadoc>Entschädigungsempfänger&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LE">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LE">
+                            <ns5:javadoc>Leistungserbringer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RS">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RS">
+                            <ns5:javadoc>Rechnungssteller&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PartnerStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="001">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AKTIV">
+                            <ns5:javadoc>aktiv&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="003">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEENDET">
+                            <ns5:javadoc>beendet&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="002">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PASSIV_ZUM_BEENDEN">
+                            <ns5:javadoc>passiv zum beenden&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PartnerTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PERSON">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PERSON">
+                            <ns5:javadoc>Person&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNTERNEHMEN">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERNEHMEN">
+                            <ns5:javadoc>Unternehmen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PortalNutzung">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRIVATKUNDEN_PORTALBENUTZER">
+                            <ns5:javadoc>Privatkunden-Portalbenutzer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Risikomerkmal">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NICHTRAUCHER">
+                            <ns5:javadoc>Nichtraucher&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAUCHER">
+                            <ns5:javadoc>Raucher&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Schluesseltyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EANNR">
+                            <ns5:javadoc>eanNr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FREMDPARTNERNUMMER">
+                            <ns5:javadoc>Fremdpartnernummer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SicherheitsStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DATENSCHUTZ">
+                            <ns5:javadoc>Datenschutz&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GRUEN">
+                            <ns5:javadoc>Grün&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ORANGE">
+                            <ns5:javadoc>Orange&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ROT">
+                            <ns5:javadoc>Rot&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VipTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MITARBEITER">
+                            <ns5:javadoc>Mitarbeiter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NORMAL">
+                            <ns5:javadoc>Normal&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PERSON_OEFF_INTERESSE">
+                            <ns5:javadoc>Person öff. Interesses&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="WunschVersandArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DIREKTVERSAND">
+                            <ns5:javadoc>Direktversand&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PORTAL_VERSAND">
+                            <ns5:javadoc>Portal&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Zeitungstyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="A_A_MAGAZIN">
+                            <ns5:javadoc>A&amp;amp;A Magazin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_MAGAZIN">
+                            <ns5:javadoc>CSS Magazin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS_MAGAZIN">
+                            <ns5:javadoc>INTRAS Magazin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Zivilstand">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUFG_REG_PARTNERSCHAFT">
+                            <ns5:javadoc>aufgelöste registrierte Partnerschaft&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GESCHIEDEN">
+                            <ns5:javadoc>geschieden&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEDIG">
+                            <ns5:javadoc>ledig&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REG_PARTNERSCHAFT">
+                            <ns5:javadoc>registrierte Partnerschaft&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERHEIRATET">
+                            <ns5:javadoc>verheiratet&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERWITWET">
+                            <ns5:javadoc>verwitwet&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

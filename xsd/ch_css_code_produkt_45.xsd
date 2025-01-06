@@ -1,0 +1,2772 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" targetNamespace="http://www.css.ch/code/produkt/45" version="45" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="Bauart">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MASSIV">
+                            <ns5:javadoc>massiv&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NICHT_MASSIV">
+                            <ns5:javadoc>nicht massiv&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Berechnungsbasis">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INVENTARBLATT">
+                            <ns5:javadoc>Inventarblatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WOHNFLAECHE_IN_M2">
+                            <ns5:javadoc>Wohnfläche in m2&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Besitzstand">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MIETER">
+                            <ns5:javadoc>Mieter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WOHN_EIGENTUM">
+                            <ns5:javadoc>Eigentümer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Ebene">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELEMENTAR_PRODUKT">
+                            <ns5:javadoc>Elementarprodukt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRODUKT">
+                            <ns5:javadoc>Produkt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERKAUFS_PRODUKT">
+                            <ns5:javadoc>Verkaufsprodukt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Einrichtungsstandard">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINFACHER_STANDARD">
+                            <ns5:javadoc>Einfacher Standard&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GEHOBENER_STANDARD">
+                            <ns5:javadoc>Gehobener Lebensstandard&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MITTLERER_STANDARD">
+                            <ns5:javadoc>Mittlerer Standard&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GesundheitsfoerderungsMassnahme">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ACTIVE_BACKADEMY_BACKADEMY">
+                            <ns5:javadoc>Bewegungskurse (ausser Nordic Walking)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="27">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AERZTLICHER_GESUNDHEITS_CHECKUP">
+                            <ns5:javadoc>Ärztlicher Gesundheits-Check-up&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AKUPUNKTUR_ZUR_GEBURTSVORBEREITUNG">
+                            <ns5:javadoc>Akupunktur zur Geburtsvorbereitung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AQUAJOGGING">
+                            <ns5:javadoc>Wasserfitness und Wassergymnastik (z.B. Aqua-Jogging, Aqua-Pilates)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="25">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ATEMKURSE">
+                            <ns5:javadoc>Atmung (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BABY_UND_KLEINKINDERSCHWIMMEN">
+                            <ns5:javadoc>Baby- und Kleinkinderschwimmen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="31">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BECHTEREW_GYMNASTIKTURNEN_SCHWIMMEN">
+                            <ns5:javadoc>Bechterew-Gymnastikturnen und -Schwimmen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="36">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEITRAEGE_SAISON_JAHRESABONNEMENTE_FREI_HALLENBAEDER_SCHWEIZ">
+                            <ns5:javadoc>Öffentliche Frei- und Hallenbäder&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="35">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEITRAG_AKTIVMITGLIEDSCHAFT_SPORTVEREINE_SCHWEIZ">
+                            <ns5:javadoc>Sportverein&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BLASEN_BECKENBODENMUSKULATUR_TRAININGSPROGRAMME">
+                            <ns5:javadoc>Blasen- und Beckenbodenmuskulatur-Training&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="34">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_CHECK_UP">
+                            <ns5:javadoc>CSS Check-up&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="37">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELTERN_KIND_SCHWIMMEN_BIS_7">
+                            <ns5:javadoc>Eltern-Kind-Schwimmen für Kinder bis 7. Geburtstag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="24">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ERNAEHRUNGSBERATUNG_UND_KURSE">
+                            <ns5:javadoc>Ernährung (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FITNESSCENTERABONNEMENTE">
+                            <ns5:javadoc>Fitnesscenter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GEBURTSVORBEREITUNGSKURSE">
+                            <ns5:javadoc>Geburtsvorbereitung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="18">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HATHA_YOGA_KURSE">
+                            <ns5:javadoc>Yoga (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="32">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HERZTURNEN_HERZSCHWIMMEN">
+                            <ns5:javadoc>Herzturnen/Herzschwimmen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="26">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KNEIPP_KURSE">
+                            <ns5:javadoc>Kneipp&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="19">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KURSE_FUER_AUTOGENES_TRAINING">
+                            <ns5:javadoc>Autogenes Training (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KURSE_FUER_FELDENKRAIS">
+                            <ns5:javadoc>Feldenkrais (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MUTTER_UND_VATER_BABY_KIND_TURNEN">
+                            <ns5:javadoc>Mutter- und Vater-Baby/Kind-Turnen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="39">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MYSTEP">
+                            <ns5:javadoc>myStep&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NOTFAELLE_BEI_KLEINKINDERN">
+                            <ns5:javadoc>Notfälle bei Kleinkindern&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NOTHILFE_SAMARITERKURSE">
+                            <ns5:javadoc>Nothilfe- und Samariter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ONLINE_FITNESS_STUDIO">
+                            <ns5:javadoc>Online-Fitness-Studio ("New Moove")&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="OSTEOPOROSE_PROPHYLAXE_KURSE">
+                            <ns5:javadoc>Osteoporose-Prophylaxe, Osteogym&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PILATES">
+                            <ns5:javadoc>Pilates&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="9">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PROGRAMME_UEBERGEWICHTIGE_KINDER_JUGENDLICHE">
+                            <ns5:javadoc>Programme für übergewichtige Kinder und Jugendliche&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="23">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PROGRAMM_ZUR_GEWICHTSREDUKTION">
+                            <ns5:javadoc>Gewichtsreduktion (califit)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="28">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAUCHERENTWOEHNUNGSKURSE_PROGRAMME">
+                            <ns5:javadoc>Raucherentwöhnung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="29">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REPROPH_TRAINING">
+                            <ns5:javadoc>Reproph-Training&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RUECKENGYMNASTIK_HALTUNGSTURNEN">
+                            <ns5:javadoc>Rückengymnastik, Spiraldynamik® und Haltungsturnen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SAEUGLINGSPFLEGEKURSE_STILLBERATUNG_BABYMASSAGEKURSE">
+                            <ns5:javadoc>Säuglingspflege, Stillberatung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHRITTZAEHLER_FUER_MYSTEP">
+                            <ns5:javadoc>Schrittzähler für myStep&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHWANGERSCHAFTSTURNEN_RUECKBILDUNGSGYMNASTIK">
+                            <ns5:javadoc>Schwangerschaftsturnen, Rückbildungsgymnastik&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SOPHROLOGIE_KURSE_UND_BERATUNG">
+                            <ns5:javadoc>Sophrologie (Prävention)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="21">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STRESSBEWAELTIGUNGSKURSE_MBSR">
+                            <ns5:javadoc>Stressbewältigung/MBSR&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="41">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STURZPROPHYLAXE_GLEICHGEWICHTSTRAINING">
+                            <ns5:javadoc>Sturzprophylaxe und Gleichgewichtstraining&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="33">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERSTUETZUNG_KREBSBETROFFENE">
+                            <ns5:javadoc>Unterstützung für Krebsbetroffene&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WASSERGEWOEHNUNGS_SCHWIMMKURSE_KINDER_ATEMWEGPROBLEME">
+                            <ns5:javadoc>Wassergewöhnung- und Schwimmen für Kinder mit Atemwegproblemen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="38">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZILGREI">
+                            <ns5:javadoc>Zilgrei&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GrundversicherungsTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="07">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BILATERALE_VERTRAEGE">
+                            <ns5:javadoc>Bilaterale Verträge&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BONUSVERSICHERUNG">
+                            <ns5:javadoc>Bonusversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GESUNDHEITSPRAXISVERSICHERUNG">
+                            <ns5:javadoc>Gesundheitspraxisversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="05">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAUSARZTVERSICHERUNG">
+                            <ns5:javadoc>Hausarztversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="06">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEDIZINISCHER_TELEFONDIENST">
+                            <ns5:javadoc>Telemedizinisches Modell&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SONSTIGE">
+                            <ns5:javadoc>Sonstige&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STANDARD">
+                            <ns5:javadoc>Standard&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Haustyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINFAMILIENHAUS">
+                            <ns5:javadoc>Einfamilienhaus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAHRNISBAUTEN_MOBILHEIME">
+                            <ns5:javadoc>Fahrnisbauen/Mobilheime&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FERIENHAUS">
+                            <ns5:javadoc>Zweitwohnung/Ferienhaus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEHRFAMILIENHAUS">
+                            <ns5:javadoc>Mehrfamilienhaus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WOHNEN_UND_LANDWIRTSCHAFT">
+                            <ns5:javadoc>Wohnen&amp;amp;Landwirtschaft zusammen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="KUTGDeckungsArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BVG">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BVG">
+                            <ns5:javadoc>BVG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="KVG">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KVG">
+                            <ns5:javadoc>KVG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Leistungsbereich">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEWEGUNG">
+                            <ns5:javadoc>Bewegung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_CHECKUP">
+                            <ns5:javadoc>CSS Check-up&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DIVERSE_GESUNDHEITSLEISTUNGEN">
+                            <ns5:javadoc>Diverse&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIE">
+                            <ns5:javadoc>Familie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FITNESS">
+                            <ns5:javadoc>Fitness&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GESUNDHEITSKONTO_BONUS">
+                            <ns5:javadoc>Gesundheitskonto-Bonus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRIVATE_ASSISTANCE">
+                            <ns5:javadoc>Private Assistance&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHRITTZAEHLER">
+                            <ns5:javadoc>Schrittzähler&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LeistungserbringerGruppe">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAUSARZTVERSICHERUNG_FIRST_MED">
+                            <ns5:javadoc>Hausarztversicherung First Med&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAUSARZTVERSICHERUNG_OPTIMED">
+                            <ns5:javadoc>Hausarztversicherung Optimed&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HAUSARZTVERSICHERUNG_PROFIT">
+                            <ns5:javadoc>Hausarztversicherung Profit&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSERBRINGER_NETZWERK">
+                            <ns5:javadoc>Leistungserbringer-Netzwerk&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Leistungsgruppe">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ALTERNATIVMEDIZIN">
+                            <ns5:javadoc>Alternativmedizin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AMBULANTE_BEHANLDUNG_NOTFALL">
+                            <ns5:javadoc>Ambulante Behandlungen aufgrund Notfall&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="9">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AMBULANTE_GEBURT">
+                            <ns5:javadoc>Ambulante Geburt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AMBULANTE_WAHLBEHANDLUNGEN_AUSLAND">
+                            <ns5:javadoc>Ambulante Wahlbehandlungen im Ausland&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUSLANDRECHTSSCHUTZ">
+                            <ns5:javadoc>Auslandrechtsschutz&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="31">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BADE_UND_ERHOLUNGSKUREN">
+                            <ns5:javadoc>Bade- und Erholungskuren&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="21">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEHANDLUNG_BEI_ZAHNUNFALL">
+                            <ns5:javadoc>Behandlung bei Zahnunfall, Erkrankungen des Kausystems&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="41">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BRILLENGLAESER_KONTAKTLINSEN">
+                            <ns5:javadoc>Brillengläser/Kontaktlinsen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="52">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DENTALHYGIENE">
+                            <ns5:javadoc>Dentalhygiene&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="23">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ENTFERNUNG_WEISHEITSZAEHNE_ERWACHSENE">
+                            <ns5:javadoc>Entfernung von Weisheitszähnen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="46">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRUEHERKENNUNG_KOLONKARZINOM">
+                            <ns5:javadoc>Früherkennung des Kolonkarzinoms&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GEBURTSVORBEREITUNGSKURS">
+                            <ns5:javadoc>Geburtsvorbereitungskurs&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GESUNDHEITSFOERDERUNG">
+                            <ns5:javadoc>Gesundheitsförderung (Auswahlliste hinterlegt)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="24">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GYNAEKOLOGISCHE_VORSORGEUNTERSUCHUNGEN">
+                            <ns5:javadoc>Gynäkologische Vorsorgeuntersuchungen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="33">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HILFSMITTEL">
+                            <ns5:javadoc>Hilfsmittel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="29">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="IMPFUNGEN">
+                            <ns5:javadoc>Impfungen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="47">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KAPITALAUSZAHLUNG_INFOLGE_KRANKHEIT">
+                            <ns5:javadoc>Kapitalauszahlung infolge Krankheit&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="44">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KAPITALAUSZAHLUNG_INFOLGE_UNFALL">
+                            <ns5:javadoc>Kapitalauszahlung infolge Unfall&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="27">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KOLONOSKOPIE">
+                            <ns5:javadoc>Kolonoskopie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KONTROLL_UND_ULTRASCHALL">
+                            <ns5:javadoc>Kontroll- und Ultraschalluntersuchungen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="25">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MAMMOGRAFIE">
+                            <ns5:javadoc>Mammografie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEDIKAMENTE">
+                            <ns5:javadoc>Medikamente&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="49">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEDIZINISCHER_COACH">
+                            <ns5:javadoc>Medizinischer Coach&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEDIZINISCH_NOTWENDIGE_TRANSPORTE">
+                            <ns5:javadoc>Medizinisch notwendige Transporte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="36">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEDIZINPRODUKTE">
+                            <ns5:javadoc>Medizinprodukte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="38">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="OHRENKORREKTUR">
+                            <ns5:javadoc>Ohrenkorrektur&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="42">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PATIENTENRECHTSSCHUTZ">
+                            <ns5:javadoc>Patientenrechtsschutz&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="32">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PFLEGE_UND_HILFE_ZUHAUSE">
+                            <ns5:javadoc>Pflege und Hilfe zu Hause&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="48">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PREMIUM_BETREUER">
+                            <ns5:javadoc>Premium-Betreuer&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="51">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PREMIUM_GOLDKARTE">
+                            <ns5:javadoc>Premium-Goldkarte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PSYCHIATRIE_STATIONAER">
+                            <ns5:javadoc>Psychiatrie stationär&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="34">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PSYCHOTHERAPIE">
+                            <ns5:javadoc>Psychotherapie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="35">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REHABILITATION_AMBULANT">
+                            <ns5:javadoc>Rehabilitation ambulant&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REHABILITATION_STATIONAER">
+                            <ns5:javadoc>Rehabilitation stationär&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="19">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REPATRIIERUNG">
+                            <ns5:javadoc>Repatriierung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ROOMING_IN">
+                            <ns5:javadoc>Rooming-in&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="45">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SACHSCHAEDEN_INFOLGE_UNFALL">
+                            <ns5:javadoc>Sachschäden infolge Unfall&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHULMEDIZIN">
+                            <ns5:javadoc>Schulmedizin&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="26">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCREENING_MAMMOGRAPHIE">
+                            <ns5:javadoc>Screening-Mammografie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SPITALAUFENTHALT_INLAND">
+                            <ns5:javadoc>Spitalaufenthalt (Inland)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STATIONAERE_BEHANDLUNGEN_NOTFALL">
+                            <ns5:javadoc>Stationäre Behandlungen aufgrund Notfall&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STATIONAERE_GEBURT">
+                            <ns5:javadoc>Stationäre Geburt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="18">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STATIONAERE_WAHLBEHANDLUNG_AUSLAND">
+                            <ns5:javadoc>Stationäre Wahlbehandlung im Ausland&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STILLBERATUNG_STILLEN">
+                            <ns5:javadoc>Stillberatung/Stillen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SUCH_UND_RETTUNGSKOSTEN">
+                            <ns5:javadoc>Such- und Rettungskosten&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="37">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERBINDUNG">
+                            <ns5:javadoc>Unterbindung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERSTUETZUNGSLEISTUNGEN">
+                            <ns5:javadoc>Unterstützungsleistungen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="28">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERSUCHUNG_HAUT">
+                            <ns5:javadoc>Untersuchung der Haut&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="39">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WAGNISSE">
+                            <ns5:javadoc>Wagnisse&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WEITERE_TRANSPORTE">
+                            <ns5:javadoc>Weitere Transporte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="43">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZAHNBEHANDLUNGSKOSTEN_BIS_18">
+                            <ns5:javadoc>Zahnbehandlungskosten&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZAHNSTELLUNGSKORREKTUREN_BIS_20">
+                            <ns5:javadoc>Zahnstellungskorrekturen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Personenkreis">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELPERSON">
+                            <ns5:javadoc>Einzelperson&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIE">
+                            <ns5:javadoc>Familie / Mehrpersonen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NUR_FAMILIE">
+                            <ns5:javadoc>Familie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PraemienPeriode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINMAL">
+                            <ns5:javadoc>Einmal&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HALBJAHR">
+                            <ns5:javadoc>Halbjahr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="JAHR">
+                            <ns5:javadoc>Jahr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MONAT">
+                            <ns5:javadoc>Monat&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="QUARTAL">
+                            <ns5:javadoc>Quartal&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PraemientarifTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELTARIF_MIT_RAV_RABATT">
+                            <ns5:javadoc>Einzeltarif mit Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELTARIF_OHNE_RAV_RABATT">
+                            <ns5:javadoc>Einzeltarif ohne Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INDIVIDUAL_TARIF_MIT_RAV_RABATT">
+                            <ns5:javadoc>Individualtarif mit Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INDIVIDUAL_TARIF_OHNE_RAV_RABATT">
+                            <ns5:javadoc>Individualtarif ohne Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STANDARDISIERTER_INDIVIDUALTARIF_MIT_RAV_RABATT">
+                            <ns5:javadoc>Standardisierter Individualtarif mit Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STANDARDISIERTER_INDIVIDUALTARIF_OHNE_RAV_RABATT">
+                            <ns5:javadoc>Standardisierter Individualtarif ohne Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ProduktauswahlSistierung">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ALLE_PRODUKTE">
+                            <ns5:javadoc>alle Produkte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NUR_VVG_PRODUKTE">
+                            <ns5:javadoc>nur VVG-Produkte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NUR_VVG_PRODUKTE_OHNE_UTI_UTI_HK">
+                            <ns5:javadoc>nur VVG-Produkte ohne UTI, UTI/HK&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ProduktgruppeVVG">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS">
+                            <ns5:javadoc>CSS&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS">
+                            <ns5:javadoc>Intras&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANAGATE">
+                            <ns5:javadoc>Sanagate&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RahmenvertragBesonderheit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="altersRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ALTERS_RABATT_WERT">
+                            <ns5:javadoc>Altersrabatt Tafel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="altersWertTafel">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ALTERS_WERT_TAFEL">
+                            <ns5:javadoc>Prämienaltersgruppen Struktur&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="angebotsLand">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ANGEBOTS_LAND">
+                            <ns5:javadoc>In jedem Land verkaufbar&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="auswaehlbar">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUSWAEHLBAR">
+                            <ns5:javadoc>Im Einzelvertrag auswählbar&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="basisTarif">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BASIS_TARIF">
+                            <ns5:javadoc>Basistarif&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="epName">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EP_NAME">
+                            <ns5:javadoc>Zusätzliche Leistungsvariante&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="familienRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIEN_RABATT_WERT">
+                            <ns5:javadoc>Familienrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="franchiseWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRANCHISE_WERT">
+                            <ns5:javadoc>Franchiserabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="jugendRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="JUGEND_RABATT_WERT">
+                            <ns5:javadoc>Jugendrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="leistungsFreiheitsRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGS_FREIHEITS_RABATT_WERT">
+                            <ns5:javadoc>Leistungsfreiheitsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="leistungsVarianteWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGS_VARIANTE_WERT">
+                            <ns5:javadoc>Leistungsvariante Tafel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="praemienAltersSchwelle">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRAEMIEN_ALTERS_SCHWELLE">
+                            <ns5:javadoc>Schwellenwert Eintrittsalter&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="rahmenVertragsRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAHMENVERTRAGS_RABATT_WERT">
+                            <ns5:javadoc>Rahmenvertragsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="tarifierungsArt">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TARIFIERUNGS_ART">
+                            <ns5:javadoc>Tarifierungsart&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="tarifWertMatrix">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TARIF_WERT_MATRIX">
+                            <ns5:javadoc>Tariftafel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="tarifZoneErmittlungsArt">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TARIF_ZONE_ERMITTLUNGS_ART">
+                            <ns5:javadoc>Tarifzone-Ermittlung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="treueRabattWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TREUE_RABATT_WERT">
+                            <ns5:javadoc>Treuerabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="unfallAuschlussWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNFALL_AUSSCHLUSS_WERT">
+                            <ns5:javadoc>Unfallausschluss Tafel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="vocWert">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOC_WERT">
+                            <ns5:javadoc>VOC Abgabe&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RahmenvertragEinschraenkung">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="05">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRANCHISE_STUFE">
+                            <ns5:javadoc>Franchise&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSDAUER">
+                            <ns5:javadoc>Leistungsdauer Art&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGS_VARIANTE">
+                            <ns5:javadoc>Leistungsvariante&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERSICHERTES_RISIKO">
+                            <ns5:javadoc>Versichertes Risiko&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WARTEFRIST">
+                            <ns5:javadoc>Wartefrist&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Rechtstraeger">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ARCOSANA_AG">
+                            <ns5:javadoc>Arcosana AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUXILIA_AG">
+                            <ns5:javadoc>Auxilia AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_KRANKENVERSICHERUNG_AG">
+                            <ns5:javadoc>CSS Kranken-Versicherung AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_VERSICHERUNG_AG">
+                            <ns5:javadoc>CSS Versicherung AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS_KRANKENVERSICHERUNG_AG">
+                            <ns5:javadoc>INTRAS Krankenversicherung AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="INTRAS_VERSICHERUNGEN_AG">
+                            <ns5:javadoc>INTRAS Versicherungen AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SANAGATE_AG">
+                            <ns5:javadoc>Sanagate AG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SHVElementarproduktTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GRUNDVERSICHERUNG">
+                            <ns5:javadoc>Grundversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZUSATZVERSICHERUNG">
+                            <ns5:javadoc>Zusatzversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Sparte">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELV">
+                            <ns5:javadoc>ELV-AVIS&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="160">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ELV_NEU">
+                            <ns5:javadoc>ELV&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="180">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FREMDPRODUKTE">
+                            <ns5:javadoc>Fremdprodukte&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRV">
+                            <ns5:javadoc>FRV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="100">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GBT">
+                            <ns5:javadoc>GBT&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KTG">
+                            <ns5:javadoc>KTG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="170">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KU">
+                            <ns5:javadoc>KU&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="210">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KURZFRISTRISIKO_KTG">
+                            <ns5:javadoc>Kurzfristrisiko (KTG)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KUTG">
+                            <ns5:javadoc>KUTG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KV">
+                            <ns5:javadoc>KV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="150">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NL">
+                            <ns5:javadoc>NL&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="130">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAV_PG">
+                            <ns5:javadoc>RAV PG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="140">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAV_UG">
+                            <ns5:javadoc>RAV UG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SHV">
+                            <ns5:javadoc>SHV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="190">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SPV">
+                            <ns5:javadoc>SPV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STG">
+                            <ns5:javadoc>STG&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="120">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STOP_LOSS">
+                            <ns5:javadoc>STOP LOSS&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="110">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TAG">
+                            <ns5:javadoc>TAG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="80">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UVG">
+                            <ns5:javadoc>UVG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="90">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UVG_Z">
+                            <ns5:javadoc>UVG-Z&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SprachKontext">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AGUI">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AGUI">
+                            <ns5:javadoc>AGUI (Angebots-GUI)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EBIZGUI">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EBIZGUI">
+                            <ns5:javadoc>EBIZGUI (E-Business-GUI)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="PPRT">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PPRT">
+                            <ns5:javadoc>PPRT (Policen-Druck)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TarifTypFRV">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="einzelperson">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELPERSON">
+                            <ns5:javadoc>Einzelperson&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="einzelpersonversicherungEsure">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELPERSON_VERSICHERUNG_ESURE">
+                            <ns5:javadoc>Einzelpersonen-Versicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="familienversicherungEsure">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIEN_VERSICHERUNG_ESURE">
+                            <ns5:javadoc>Familien-Versicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="mehrpersonenhaushalt">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MEHRPERSONENHAUSHALT">
+                            <ns5:javadoc>Mehrpersonenhaushalt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="reisegruppe">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REISEGRUPPE">
+                            <ns5:javadoc>Reisegruppe&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="zweipersonenhaushalt">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZWEI_PERSONENHAUSHALT">
+                            <ns5:javadoc>2-Personenhaushalt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="zweipersonenversicherungEsure">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZWEI_PERSONEN_VERSICHERUNG_ESURE">
+                            <ns5:javadoc>2-Personen-Versicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TarifTypSTG">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINZELPERSON">
+                            <ns5:javadoc>Einzelperson&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIE">
+                            <ns5:javadoc>Familie&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PAAR">
+                            <ns5:javadoc>Paar&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TarifZoneErmittlungsArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NACH_DEFAULT_TARIFZONE">
+                            <ns5:javadoc>Nach Default-Tarifzone&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NACH_RAHMENVERTRAG">
+                            <ns5:javadoc>Nach Rahmenvertrag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NACH_WOHNGEMEINDE">
+                            <ns5:javadoc>Nach Wohngemeinde&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VerrechnungsArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NACHLASS">
+                            <ns5:javadoc>Nachlass&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZUSCHLAG">
+                            <ns5:javadoc>Zuschlag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VersicherteLS">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LOHNSUMME_FRAUEN">
+                            <ns5:javadoc>LohnsummeFrauen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LOHNSUMME_MAENNER">
+                            <ns5:javadoc>LohnsummeMaenner&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LOHNSUMME_MTG_OBLIG">
+                            <ns5:javadoc>LohnsummeMTGOblig&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LOHNSUMME_MTG_UEBEROBLIG">
+                            <ns5:javadoc>LohnsummeMTGUeberoblig&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LOHNSUMME_TOTAL">
+                            <ns5:javadoc>LohnsummeTotal&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VersichertesRisiko">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_KRANKHEIT">
+                            <ns5:javadoc>K&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_KRANKHEIT_OHNE_MUTTERSCHAFT">
+                            <ns5:javadoc>K o Mu&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_KRANKHEIT_UNFALL">
+                            <ns5:javadoc>K+U&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_KRANKHEIT_UNFALL_OHNE_MUTTERSCHAFT">
+                            <ns5:javadoc>K+U o Mu&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_MUTTERSCHAFT">
+                            <ns5:javadoc>Mutterschaft&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKO_UNFALL">
+                            <ns5:javadoc>U&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VersicherungAenderung">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUSSCHLUSS_PERSON">
+                            <ns5:javadoc>Ausschluss Person&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINSCHLUSS_PERSON">
+                            <ns5:javadoc>Einschluss Person&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GLEICHWERTIGE_AENDERUNG">
+                            <ns5:javadoc>gleichwertige Änderung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="HOEHER_VERSICHERUNG">
+                            <ns5:javadoc>Höherversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NEU_VERSICHERUNG">
+                            <ns5:javadoc>Neuversicherung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRODUKTLINIENWECHSEL">
+                            <ns5:javadoc>Produktlinienwechsel&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="-2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REDUKTION">
+                            <ns5:javadoc>Reduktion&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="-1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UEBRIGE_AENDERUNG">
+                            <ns5:javadoc>übrige Änderung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="WartefristArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRO_ARBEITS_JAHR">
+                            <ns5:javadoc>Pro Arbeitsjahr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRO_FALL">
+                            <ns5:javadoc>Pro Fall&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRO_KALENDER_JAHR">
+                            <ns5:javadoc>Pro Kalenderjahr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ZuschlagNachlassAnrechnung">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_BRUTTO">
+                            <ns5:javadoc>vor Brutto&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_DOKUMENT">
+                            <ns5:javadoc>vor Dokument&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_NETTO">
+                            <ns5:javadoc>vor Netto&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_RECHNUNG">
+                            <ns5:javadoc>vor Rechnung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_ZWISCHENTOTAL_1">
+                            <ns5:javadoc>vor Zwischentotal 1&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_ZWISCHENTOTAL_2">
+                            <ns5:javadoc>vor Zwischentotal 2&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOR_ZWISCHENTOTAL_3">
+                            <ns5:javadoc>vor Zwischentotal 3&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ZuschlagNachlassArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BONUS_REDUKTION">
+                            <ns5:javadoc>Bonusrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BONUS_ZUSCHLAG">
+                            <ns5:javadoc>Bonus Zuschlag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CARRIER_RABATT">
+                            <ns5:javadoc>Carrier-Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="28">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CROSS_SELLING_RABATT">
+                            <ns5:javadoc>Cross-Selling-Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="43">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="CSS_SPEZIALRABATT">
+                            <ns5:javadoc>CSS-Spezialrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="40">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="EINMALZUSCHLAG_2016">
+                            <ns5:javadoc>Gesetzlicher Einmalzuschlag 2016 aus Prämienkorrektur (Art. 106a KVG)&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="29">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ERSTGRUENDUNGSRABATT">
+                            <ns5:javadoc>Erstgründungsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FAMILIEN_RABATT">
+                            <ns5:javadoc>Familienrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRANCHISE_RABATT">
+                            <ns5:javadoc>Franchiserabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GRUENDER_RABATT">
+                            <ns5:javadoc>Gründer-Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="JUGEND_RABATT">
+                            <ns5:javadoc>Jugendrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="39">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KANTONALER_PRAEMIENAUSGLEICH">
+                            <ns5:javadoc>Prämienzuschlag gemäss Art. 106 KVG&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KOSTENBETEILIGUNGSRABATT">
+                            <ns5:javadoc>Kostenbeteiligungsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="34">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KUNDEN_RABATT">
+                            <ns5:javadoc>CSS-Kundenrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSFREIHEITSBONUS">
+                            <ns5:javadoc>Leistungsfreiheitsbonus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSFREIHEITS_RABATT">
+                            <ns5:javadoc>Leistungsfreiheitsr.&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSMODELL_RABATT">
+                            <ns5:javadoc>Rabatt GPV&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="21">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="LEISTUNGSMODELL_RABATT_KVG">
+                            <ns5:javadoc>Leistungsmodell Rabatt HMO&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="31">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MINDESTPRAEMIENZUSCHLAG">
+                            <ns5:javadoc>Mindestprämienzuschlag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="33">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MITARBEITER_RABATT">
+                            <ns5:javadoc>CSS-Mitarbeiterrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="19">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="OKP_INTRAS_KINDER_RABATT">
+                            <ns5:javadoc>OKP 3. Kind Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="26">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRAEMIENREDUKTIONS_RABATT">
+                            <ns5:javadoc>Prämienreduktions-Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PROMOTIONS_RABATT">
+                            <ns5:javadoc>Promotionsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAHMENVERTRAGS_RABATT">
+                            <ns5:javadoc>Rab. Rahmenvertrag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RATENZUSCHLAG">
+                            <ns5:javadoc>Ratenzuschlag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="27">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REDUKTION_AUF_TARIF">
+                            <ns5:javadoc>Reduktion auf Tarif&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="41">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="REISEGRUPPENRABATT">
+                            <ns5:javadoc>Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="25">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKOZUSCHLAG_BERUF">
+                            <ns5:javadoc>Risikozuschlag Beruf&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="23">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKOZUSCHLAG_NATIONALITAET">
+                            <ns5:javadoc>Risikozuschlag Nationalität&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="24">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RISIKOZUSCHLAG_RAUCHER">
+                            <ns5:javadoc>Risikozuschlag Raucher&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SCHADENFREIHEITSBONUS">
+                            <ns5:javadoc>Schadenfreiheitsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SKONTO">
+                            <ns5:javadoc>Skonto&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="32">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STEMPELSTEUER">
+                            <ns5:javadoc>Eidg. Stempelgebühr&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="35">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STG_KV_SPITAL_KOMBINATIONS_RABATT">
+                            <ns5:javadoc>Kombinationsrabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="36">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STG_ZUSCHLAG_VIERTES_KIND">
+                            <ns5:javadoc>STG Zuschlag ab viertem Kind&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TREUE_RABATT">
+                            <ns5:javadoc>Treuerabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="9">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TREUE_RABATT_TG">
+                            <ns5:javadoc>Treuerabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="18">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNO_RABATT">
+                            <ns5:javadoc>Uno-Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERTRAGSDAUERBONUS">
+                            <ns5:javadoc>Vertragsdauerbonus&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VOC_RABATT">
+                            <ns5:javadoc>VOC und CO2 Rabatt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="37">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZAHNPFLEGE_BONUS">
+                            <ns5:javadoc>Bonus / Malus&lt;br&gt; Gültigkeit Mandant: 001</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="42">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ZOOM_KOMBINATIONSRABATT">
+                            <ns5:javadoc>Kombinationsrabatt "Zoom"&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

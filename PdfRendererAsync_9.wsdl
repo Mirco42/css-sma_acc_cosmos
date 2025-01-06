@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns1:definitions xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://www.w3.org/2005/08/addressing" xmlns:ns8="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="PdfRenderer">
+    <ns1:import namespace="http://www.css.ch/eb/es/renderer/PdfRenderer/9" location="import/PdfRenderer_specification_9.wsdl"/>
+    <ns1:binding xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="PdfRendererSOAP" type="tns:PdfRenderer">
+        <ns2:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <ns1:operation name="getVersion">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/getVersion"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+        </ns1:operation>
+        <ns1:operation name="ping">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/ping"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragAktivierungscode">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragAktivierungscode"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragAntrag">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragAntrag"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragFRVReisedokumentation">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragFRVReisedokumentation"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragOfferte">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragOfferte"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragSHVAntrag">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragSHVAntrag"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragWechselFranchise">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragWechselFranchise"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+        <ns1:operation name="submitDruckauftragWechselVersicherungsmodell">
+            <ns2:operation soapAction="http://www.css.ch/eb/es/renderer/PdfRenderer/submitDruckauftragWechselVersicherungsmodell"/>
+            <ns1:input>
+                <ns2:body use="literal"/>
+            </ns1:input>
+            <ns1:output>
+                <ns2:body use="literal"/>
+            </ns1:output>
+            <ns1:fault name="InvalidDataFault">
+                <ns2:fault name="InvalidDataFault" use="literal"/>
+            </ns1:fault>
+            <ns1:fault name="ServiceUnavailableFault">
+                <ns2:fault name="ServiceUnavailableFault" use="literal"/>
+            </ns1:fault>
+        </ns1:operation>
+    </ns1:binding>
+    <ns1:service name="PdfRenderer">
+        <ns1:port xmlns:tns="http://www.css.ch/eb/es/renderer/PdfRenderer/9" name="PdfRenderer" binding="tns:PdfRendererSOAP">
+            <ns2:address location="http://localhost:9080/eb-es-renderer/PdfRendererPort"/>
+        </ns1:port>
+    </ns1:service>
+    <ns6:Policy xmlns:ns9="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" ns9:Id="TokenPolicy">
+        <ns6:ExactlyOne>
+            <ns8:SupportingTokens>
+                <ns6:Policy>
+                    <OidcToken xmlns="http://www.css.ch/ws/securitypolicy" ns8:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient"/>
+                </ns6:Policy>
+            </ns8:SupportingTokens>
+            <ns8:SupportingTokens>
+                <ns6:Policy>
+                    <ns8:UsernameToken ns8:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <ns6:Policy>
+                            <ns8:WssUsernameToken11/>
+                        </ns6:Policy>
+                    </ns8:UsernameToken>
+                </ns6:Policy>
+            </ns8:SupportingTokens>
+        </ns6:ExactlyOne>
+    </ns6:Policy>
+</ns1:definitions>

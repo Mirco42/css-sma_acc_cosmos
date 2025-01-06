@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://www.w3.org/2005/08/addressing" xmlns:ns8="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://www.css.ch/bsfw/types/2" version="2" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:complexType name="BOPeriod">
+        <xs:sequence>
+            <xs:element type="xs:date" minOccurs="1" maxOccurs="1" name="validFrom"/>
+            <xs:element type="xs:date" minOccurs="1" maxOccurs="1" name="validTo"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSContainer" abstract="true">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="BSDetailInfo">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="label"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="value"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSDiagnosticInfo">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="systemName"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSDetailInfo" minOccurs="0" maxOccurs="unbounded" name="bSDetailInfo"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSDiagnosticInfo" minOccurs="0" maxOccurs="1" name="bSDiagnosticInfo"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSFehlermeldung" minOccurs="0" maxOccurs="1" name="fehlermeldung"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSExceptionParameter">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="value"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="key"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSFehlermeldung">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="fehlerText"/>
+            <xs:element type="xs:string" minOccurs="0" maxOccurs="1" name="stacktrace"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSFehlerArt" minOccurs="1" maxOccurs="1" name="fehlerArt"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSGetServiceInfoOut">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="adapterVersion"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="buildDate"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="implementationVersions"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="releaseUnitName"/>
+            <xs:element type="xs:string" minOccurs="0" maxOccurs="1" name="releaseUnitGroup"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSGetSystemInfoOut">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSDiagnosticInfo" minOccurs="1" maxOccurs="1" name="bSDiagnosticInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSInContainer">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="0" maxOccurs="1" name="workflowProcessId"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSIteratorIn">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="key"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="batchSize"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSIteratorOut">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="key"/>
+            <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="hasMore"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSMessage">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="language"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="message"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSOutContainer">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSOutContext" minOccurs="0" maxOccurs="1" name="outCtx"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSOutContext">
+        <xs:sequence>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSProcessHint" minOccurs="0" maxOccurs="unbounded" name="processhints"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSSystemIdentification" minOccurs="0" maxOccurs="1" name="systemId"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSProcessHint">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="type"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="messageCode"/>
+            <xs:element type="xs:string" minOccurs="0" maxOccurs="unbounded" name="messageArgs"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="defaultMessageText"/>
+            <xs:element type="xs:string" minOccurs="0" maxOccurs="unbounded" name="reference"/>
+            <xs:element type="xs:dateTime" minOccurs="1" maxOccurs="1" name="timestamp"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSMessage" minOccurs="0" maxOccurs="unbounded" name="localizedMessages"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSSearchIn">
+        <xs:sequence>
+            <xs:element type="xs:int" minOccurs="0" maxOccurs="1" name="batchSize"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSSearchInContainer">
+        <xs:sequence>
+            <xs:element type="xs:int" minOccurs="0" maxOccurs="1" name="batchSize"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="startIndex"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSSearchOut">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="key"/>
+            <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="hasMore"/>
+            <xs:element type="xs:int" minOccurs="0" maxOccurs="1" name="size"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="batchSize"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSSearchOutContainer">
+        <xs:sequence>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="indexFirst"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="indexLast"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="batchSize"/>
+            <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="next"/>
+            <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="prev"/>
+            <xs:element type="xs:int" minOccurs="0" maxOccurs="1" name="size"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSSystemIdentification">
+        <xs:sequence>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="area"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="systemId"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="systemNummer"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="locationId"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BSVoidInContainer">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="BSVoidOutContainer">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="BSException">
+        <xs:sequence>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="message"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="uid"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="traceId"/>
+            <xs:element type="xs:int" minOccurs="1" maxOccurs="1" name="code"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSMessage" minOccurs="0" maxOccurs="unbounded" name="businessMessage"/>
+            <xs:element xmlns="http://www.css.ch/bsfw/types/2" type="BSExceptionParameter" minOccurs="0" maxOccurs="unbounded" name="parameter"/>
+            <xs:element type="xs:string" minOccurs="1" maxOccurs="1" name="stackTraceAsString"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="BSFehlerArt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ERROR">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ERROR"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="WARNING">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="WARNING"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

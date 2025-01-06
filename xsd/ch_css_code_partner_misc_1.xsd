@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:ns1="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://java.sun.com/xml/ns/jaxb" xmlns:ns6="http://www.w3.org/ns/ws-policy" xmlns:ns7="http://www.w3.org/2005/08/addressing" xmlns:ns8="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://www.css.ch/code/partner/misc/1" version="1" elementFormDefault="qualified" ns5:version="1.0">
+    <xs:simpleType name="Bestellunterlage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="5300">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="AUSZUG_FUER_STEUERERKLAERUNG">
+                            <ns5:javadoc>Auszug für Steuererklärung&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Geschaesftsfalloperation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DELETE">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DELETE">
+                            <ns5:javadoc>DELETE&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MODIFY">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MODIFY">
+                            <ns5:javadoc>MODIFY&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NEWRECORD">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="NEWRECORD">
+                            <ns5:javadoc>NEWRECORD&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="KontaktblockRegelTyp">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRIVATE_ASSISTANCE">
+                            <ns5:javadoc>Private Assistance&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="RAV_P">
+                            <ns5:javadoc>RAV P&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="STANDARD">
+                            <ns5:javadoc>Standard&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="KuzuAccountStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="BEANTRAGT">
+                            <ns5:javadoc>beantragt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GELOESCHT">
+                            <ns5:javadoc>gelöscht&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="GESPERRT">
+                            <ns5:javadoc>gesperrt&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VERIFIZIERT">
+                            <ns5:javadoc>verifiziert&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="VORREGISTRIERT">
+                            <ns5:javadoc>vorregistriert&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="KuzuPartnerRecht">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="100">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KEYACCOUNTZUGRIFF"/>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Language">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="de">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DEUTSCH">
+                            <ns5:javadoc>Deutsch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="en">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ENGLISCH">
+                            <ns5:javadoc>Englisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="fr">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FRANZOESISCH">
+                            <ns5:javadoc>Französisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="it">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="ITALIENISCH">
+                            <ns5:javadoc>Italienisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="hr">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KROATISCH">
+                            <ns5:javadoc>Kroatisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="mk">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MAZEDONISCH">
+                            <ns5:javadoc>Mazedonisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pt">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PORTUGIESISCH">
+                            <ns5:javadoc>Portugiesisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="sr">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SERBISCH">
+                            <ns5:javadoc>Serbisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="es">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SPANISCH">
+                            <ns5:javadoc>Spanisch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PartnerTypKontakt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PERSON">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PERSON">
+                            <ns5:javadoc>Person&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNTERNEHMEN">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="UNTERNEHMEN">
+                            <ns5:javadoc>Unternehmen&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SenderStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="KEIN_EDI_PARTNER">
+                            <ns5:javadoc>Kein EDI-Partner&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="PRODUKTIV">
+                            <ns5:javadoc>Produktiv&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="TEST">
+                            <ns5:javadoc>Test&lt;br&gt; Gültigkeit Mandant: 000 @deprecated</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Wochentag">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DIENSTAG">
+                            <ns5:javadoc>Dienstag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="08">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DIENSTAG_FREITAG">
+                            <ns5:javadoc>Dienstag - Freitag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="DONNERSTAG">
+                            <ns5:javadoc>Donnerstag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="05">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="FREITAG">
+                            <ns5:javadoc>Freitag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MITTWOCH">
+                            <ns5:javadoc>Mittwoch&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="MONTAG">
+                            <ns5:javadoc>Montag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="06">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SAMSTAG">
+                            <ns5:javadoc>Samstag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="09">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SAMSTAG_SONNTAG">
+                            <ns5:javadoc>Samstag - Sonntag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="07">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <ns5:typesafeEnumMember name="SONNTAG">
+                            <ns5:javadoc>Sonntag&lt;br&gt; Gültigkeit Mandant: 000</ns5:javadoc>
+                        </ns5:typesafeEnumMember>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l7:layer7-config
+   xmlns:env="http://l7.security.css.ch/environment"
+   xmlns:l7="http://l7.security.css.ch/config"
+   xmlns:pep="http://l7.security.css.ch/pep"
+   xmlns:srv="http://l7.security.css.ch/service"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://l7.security.css.ch/config layer7-config.xsd">
+
+   <env:environment name="<$cell_base_env>">
+      <env:cell><$cell_env></env:cell>
+      <env:mandant><$cell_mandant></env:mandant>
+   </env:environment>
+
+   <srv:service name="OnlineRegistrationProcess" releaseUnit="sma_acc_cosmos_reg_5.69.0" version="1" serviceGroup="Cosmos">
+
+      <srv:audit>
+         <srv:saveRequest><$cell_xmlfirewall_save_request></srv:saveRequest>
+         <srv:saveResponse><$cell_xmlfirewall_save_response></srv:saveResponse>
+         <srv:fullFaultDetails><$cell_xmlfirewall_FullDetailFaultLevel></srv:fullFaultDetails>
+      </srv:audit>
+
+      <srv:proxy passthroughHttpAuthentication="true" readTimeout="60000">
+         <srv:publications>
+            <srv:publication>
+               <srv:publishedPath>/sma/ce<$cell_e>/OnlineRegistrationProcess</srv:publishedPath>
+               <srv:backendPath>/sma-acc-cosmos-reg-war/OnlineRegistrationProcess</srv:backendPath>
+            </srv:publication>
+         </srv:publications>
+         <srv:currentSecurityHeaderHandling>3</srv:currentSecurityHeaderHandling>
+         <srv:backendHosts>
+            <srv:backendHost>ce<$cell_e>.css.ch</srv:backendHost>
+         </srv:backendHosts>
+      </srv:proxy>
+
+      <srv:access>
+         <srv:network>cosmos</srv:network>
+         <srv:network>admin</srv:network>
+      </srv:access>
+
+      <srv:protection>
+         <srv:requestSize limit="2048" />
+         <srv:oversizedText maxAttrChars="8192" maxAttrNameChars="128" maxNestingDepth="32" maxTextChars="2097152" />
+      </srv:protection>
+
+      <srv:xsdValidation request="true" response="false">
+         <srv:schemaFile>OnlineRegistrationProcess_1.xsd</srv:schemaFile>
+      </srv:xsdValidation>
+
+      <srv:removeSamlToken>false</srv:removeSamlToken>
+
+      <srv:httpBasicAuthentication>
+         <srv:group name="g_eb_interessent">
+            <srv:component>eb</srv:component>
+            <srv:organisation><$cell_xmlfirewall_group_organisation></srv:organisation>
+            <srv:identityProvider>LDAP</srv:identityProvider>
+         </srv:group>
+      </srv:httpBasicAuthentication>
+
+      <srv:operations>
+         <srv:operation authentication="NONE" name="executeOnlineRegistrationProcess" />
+         <srv:operation authentication="NONE" name="executeRoleSynchronizationProcess" />
+      </srv:operations>
+
+   </srv:service>
+
+</l7:layer7-config>
